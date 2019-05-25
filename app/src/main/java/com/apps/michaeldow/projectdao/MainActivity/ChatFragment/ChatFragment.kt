@@ -1,7 +1,7 @@
 package com.apps.michaeldow.projectdao.MainActivity.ChatFragment
 
-import android.arch.lifecycle.ViewModel
-import android.support.v4.app.Fragment
+import androidx.lifecycle.ViewModel
+import androidx.fragment.app.Fragment
 
 class ChatFragment : Fragment() {
 

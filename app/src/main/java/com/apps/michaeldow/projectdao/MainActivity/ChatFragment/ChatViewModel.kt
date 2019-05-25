@@ -1,6 +1,9 @@
 package com.apps.michaeldow.projectdao.MainActivity.ChatFragment
 
-import android.arch.lifecycle.ViewModel
+import androidx.lifecycle.ViewModel
 
 class ChatViewModel : ViewModel() {
+
+
+
 }
