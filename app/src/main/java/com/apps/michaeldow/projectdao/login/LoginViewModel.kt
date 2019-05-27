@@ -9,10 +9,12 @@ class LoginViewModel: ViewModel() {
     val email = MutableLiveData<String>()
     val password = MutableLiveData<String>()
     val isSignedIn = MutableLiveData<Boolean>()
+    val goToSignUp = MutableLiveData<Boolean>()
     private val databaseProvider = LoginDatabaseProvider()
 
     init {
         isSignedIn.value = false
+        goToSignUp.value = false
     }
 
     fun onSignInClick() {
@@ -29,6 +31,10 @@ class LoginViewModel: ViewModel() {
                     }
                 }
         }
+    }
+
+    fun onGoToSignUpClick() {
+        goToSignUp.value = true
     }
 
 
