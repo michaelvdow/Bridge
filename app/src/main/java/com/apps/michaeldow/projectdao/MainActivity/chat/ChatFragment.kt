@@ -1,4 +1,4 @@
-package com.apps.michaeldow.projectdao.MainActivity.ChatFragment
+package com.apps.michaeldow.projectdao.mainactivity.chat
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -15,7 +15,7 @@ class ChatFragment : Fragment() {
 
         auth = FirebaseAuth.getInstance()
         if (auth.currentUser == null) {
-            findNavController().navigate(R.id.action_chatFragment_to_loginFragment)
+            findNavController().navigate(R.id.action_chatFragment_to_welcomeFragment)
         }
     }
 

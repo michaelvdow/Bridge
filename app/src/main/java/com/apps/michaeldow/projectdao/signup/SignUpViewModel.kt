@@ -2,6 +2,7 @@ package com.apps.michaeldow.projectdao.signup
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.apps.michaeldow.projectdao.utils.SingleEvent
 
 class SignUpViewModel: ViewModel() {
 
@@ -10,11 +11,10 @@ class SignUpViewModel: ViewModel() {
     val email = MutableLiveData<String>()
     val password = MutableLiveData<String>()
     val isSignedUp = MutableLiveData<Boolean>()
-    val goToLogin = MutableLiveData<Boolean>()
+    val signUpFailed = SingleEvent()
 
     init {
         isSignedUp.value = false
-        goToLogin.value = false
     }
 
     fun onSignUpClick() {
@@ -24,14 +24,10 @@ class SignUpViewModel: ViewModel() {
             database.signUpUser(emailValue, passwordValue).addOnCompleteListener { task ->
                 if (task.isSuccessful) {
                     isSignedUp.value = true
+                } else {
+                    signUpFailed.fire()
                 }
             }
         }
     }
-
-    fun onGoToLoginClick() {
-        goToLogin.value = true
-    }
-
-
 }

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+            android:id="@+id/matchingFragment"
+            android:title="Matching"
+            android:icon="@drawable/fui_ic_github_white_24dp">
+    </item>
+    <item
+            android:id="@+id/chatFragment"
+            android:title="Chat"
+            android:icon="@drawable/fui_ic_github_white_24dp">
+    </item>
+    <item
+            android:id="@+id/profileFragment"
+            android:title="Profile"
+            android:icon="@drawable/fui_ic_github_white_24dp">
+    </item>
+</menu>

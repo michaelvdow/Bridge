@@ -1,4 +1,4 @@
-package com.apps.michaeldow.projectdao.MainActivity.ChatFragment
+package com.apps.michaeldow.projectdao.mainactivity.chat
 
 import androidx.lifecycle.ViewModel
 

@@ -1,20 +1,19 @@
 package com.apps.michaeldow.projectdao.login
 
-import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.apps.michaeldow.projectdao.utils.SingleEvent
 
 class LoginViewModel: ViewModel() {
 
     val email = MutableLiveData<String>()
     val password = MutableLiveData<String>()
     val isSignedIn = MutableLiveData<Boolean>()
-    val goToSignUp = MutableLiveData<Boolean>()
+    val signInFailed = SingleEvent()
     private val databaseProvider = LoginDatabaseProvider()
 
     init {
         isSignedIn.value = false
-        goToSignUp.value = false
     }
 
     fun onSignInClick() {
@@ -26,15 +25,10 @@ class LoginViewModel: ViewModel() {
                     if (task.isSuccessful) {
                         isSignedIn.value = true
                     } else {
-                        println("FAILED TO SIGN IN")
-//                        Toast.makeText()
+                        signInFailed.fire()
                     }
                 }
         }
-    }
-
-    fun onGoToSignUpClick() {
-        goToSignUp.value = true
     }
 
 
