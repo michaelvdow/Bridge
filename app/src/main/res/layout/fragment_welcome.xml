@@ -44,7 +44,7 @@
                 android:padding="5dp" app:layout_constraintHorizontal_bias="0.495" android:textAllCaps="false"/>
         <ImageView
                 android:layout_width="292dp"
-                android:layout_height="294dp" app:srcCompat="@mipmap/bridge_flat"
+                android:layout_height="294dp" app:srcCompat="@mipmap/bridge_high"
                 android:id="@+id/logo" android:adjustViewBounds="false"
                 android:cropToPadding="false" app:layout_constraintTop_toTopOf="parent"
                 android:layout_marginTop="84dp" app:layout_constraintStart_toStartOf="parent"
