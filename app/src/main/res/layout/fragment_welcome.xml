@@ -8,27 +8,61 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout android:orientation="vertical"
                                                        android:layout_width="match_parent"
-                                                       android:layout_height="match_parent">
+                                                       android:layout_height="match_parent"
+                                                       android:background="@color/colorPurple"
+                                                       android:animateLayoutChanges="true">
+
 
         <Button
                 android:text="Sign Up"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="220dp"
+                android:layout_height="50dp"
                 android:onClick="@{() -> viewModel.onSignUpClick()}"
-                android:id="@+id/signUpButton" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
-                app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
-                android:layout_marginBottom="8dp" app:layout_constraintBottom_toTopOf="@+id/logInButton"
-                android:layout_marginTop="8dp" app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintHorizontal_bias="0.501" app:layout_constraintVertical_bias="0.992"/>
+                android:id="@+id/signUpButton" app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:fontFamily="@font/lato_regular"
+                style="@android:style/Widget.Material.Button" android:textSize="25sp"
+                android:includeFontPadding="false"
+                android:background="@color/colorPurpleWhite" android:textColor="@color/colorSuperDarkPurple"
+                app:layout_constraintHorizontal_bias="0.497"
+                android:layout_marginTop="40dp"
+                app:layout_constraintTop_toBottomOf="@+id/logInButton"
+                android:padding="5dp" android:textAllCaps="false"/>
         <Button
                 android:text="Log In"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="220dp"
+                android:layout_height="50dp"
                 android:onClick="@{() -> viewModel.onLogInClick()}"
                 android:id="@+id/logInButton" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
                 app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
-                app:layout_constraintBottom_toBottomOf="parent" android:layout_marginBottom="168dp"
-                app:layout_constraintHorizontal_bias="0.498"/>
+                app:layout_constraintBottom_toBottomOf="parent" android:layout_marginBottom="164dp"
+                style="@android:style/Widget.Material.Button"
+                android:fontFamily="@font/lato_regular"
+                android:background="@color/colorPurpleWhite"
+                android:textSize="25sp" android:textColor="@color/colorSuperDarkPurple" android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/bridge" app:layout_constraintVertical_bias="0.445"
+                android:padding="5dp" app:layout_constraintHorizontal_bias="0.495" android:textAllCaps="false"/>
+        <ImageView
+                android:layout_width="292dp"
+                android:layout_height="294dp" app:srcCompat="@mipmap/bridge_flat"
+                android:id="@+id/logo" android:adjustViewBounds="false"
+                android:cropToPadding="false" app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="84dp" app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="59dp" app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="60dp"
+        />
+        <TextView
+                android:text="Bridge"
+                android:layout_width="159dp"
+                android:layout_height="53dp"
+                android:id="@+id/bridge"
+                android:fontFamily="@font/lato_bold" android:textSize="40sp" android:textColor="@color/colorWhite"
+                android:textAlignment="center" android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="126dp" app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="126dp"
+                android:layout_marginTop="264dp" app:layout_constraintTop_toTopOf="@+id/logo"/>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>
