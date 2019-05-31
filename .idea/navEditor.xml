@@ -8,6 +8,16 @@
             <LayoutPositions>
               <option name="myPositions">
                 <map>
+                  <entry key="action_global_registration_navigation">
+                    <value>
+                      <LayoutPositions />
+                    </value>
+                  </entry>
+                  <entry key="action_global_registration_navigation2">
+                    <value>
+                      <LayoutPositions />
+                    </value>
+                  </entry>
                   <entry key="chatFragment">
                     <value>
                       <LayoutPositions>
@@ -59,11 +69,37 @@
                         <option name="myPosition">
                           <Point>
                             <option name="x" value="577" />
-                            <option name="y" value="157" />
+                            <option name="y" value="155" />
                           </Point>
                         </option>
                         <option name="myPositions">
                           <map>
+                            <entry key="action_registration_navigation_self">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                            <entry key="forgotPassFragment">
+                              <value>
+                                <LayoutPositions>
+                                  <option name="myPosition">
+                                    <Point>
+                                      <option name="x" value="825" />
+                                      <option name="y" value="345" />
+                                    </Point>
+                                  </option>
+                                  <option name="myPositions">
+                                    <map>
+                                      <entry key="action_forgotPassFragment_to_resetSentFragment">
+                                        <value>
+                                          <LayoutPositions />
+                                        </value>
+                                      </entry>
+                                    </map>
+                                  </option>
+                                </LayoutPositions>
+                              </value>
+                            </entry>
                             <entry key="loginFragment">
                               <value>
                                 <LayoutPositions>
@@ -76,6 +112,32 @@
                                   <option name="myPositions">
                                     <map>
                                       <entry key="action_loginFragment_to_chatFragment2">
+                                        <value>
+                                          <LayoutPositions />
+                                        </value>
+                                      </entry>
+                                      <entry key="action_loginFragment_to_forgotPassFragment">
+                                        <value>
+                                          <LayoutPositions />
+                                        </value>
+                                      </entry>
+                                    </map>
+                                  </option>
+                                </LayoutPositions>
+                              </value>
+                            </entry>
+                            <entry key="resetSentFragment">
+                              <value>
+                                <LayoutPositions>
+                                  <option name="myPosition">
+                                    <Point>
+                                      <option name="x" value="376" />
+                                      <option name="y" value="686" />
+                                    </Point>
+                                  </option>
+                                  <option name="myPositions">
+                                    <map>
+                                      <entry key="action_resetSentFragment_to_loginFragment">
                                         <value>
                                           <LayoutPositions />
                                         </value>
