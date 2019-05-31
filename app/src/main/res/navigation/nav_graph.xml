@@ -38,7 +38,7 @@
             <action android:id="@+id/action_loginFragment_to_chatFragment2" app:destination="@id/chatFragment"
                     app:popUpToInclusive="false"/>
             <action android:id="@+id/action_loginFragment_to_forgotPassFragment"
-                    app:destination="@id/forgotPassFragment"/>
+                    app:destination="@id/forgotPassFragment" app:popUpTo="@+id/loginFragment"/>
         </fragment>
         <action android:id="@+id/action_registration_navigation_self" app:destination="@id/registration_navigation"/>
         <fragment android:id="@+id/forgotPassFragment"
@@ -46,13 +46,14 @@
                   android:label="ForgotPassFragment"
                   tools:layout="@layout/fragment_forgot_pass">
             <action android:id="@+id/action_forgotPassFragment_to_resetSentFragment"
-                    app:destination="@id/resetSentFragment"/>
+                    app:destination="@id/resetSentFragment" app:popUpTo="@+id/loginFragment"/>
         </fragment>
         <fragment android:id="@+id/resetSentFragment"
                   android:name="com.apps.michaeldow.projectdao.reset_sent.ResetSentFragment"
                   android:label="ResetSentFragment"
                   tools:layout="@layout/fragment_reset_sent">
-            <action android:id="@+id/action_resetSentFragment_to_loginFragment" app:destination="@id/loginFragment"/>
+            <action android:id="@+id/action_resetSentFragment_to_loginFragment" app:destination="@id/loginFragment"
+                    app:popUpTo="@+id/loginFragment"/>
         </fragment>
     </navigation>
     <action android:id="@+id/action_global_registration_navigation" app:destination="@+id/registration_navigation"/>
