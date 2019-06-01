@@ -40,6 +40,13 @@ class LoginFragment: Fragment() {
             }
         })
 
+        viewModel.forgotPass.observe(this, Observer { forgotPass ->
+            if (forgotPass) {
+                viewModel.forgotPass.value = false
+                findNavController().navigate(R.id.action_loginFragment_to_forgotPassFragment)
+            }
+        })
+
         viewModel.signInFailed.observe(this, Observer { signInFailed ->
             Toast.makeText(context, "Log in failed", Toast.LENGTH_SHORT).show()
         })

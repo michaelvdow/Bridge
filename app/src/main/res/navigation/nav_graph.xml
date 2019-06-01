@@ -34,11 +34,12 @@
         <fragment android:id="@+id/loginFragment"
                   android:name="com.apps.michaeldow.projectdao.login.LoginFragment"
                   android:label="Log In"
-                  tools:layout="@layout/fragment_login">
+        >
             <action android:id="@+id/action_loginFragment_to_chatFragment2" app:destination="@id/chatFragment"
                     app:popUpToInclusive="false"/>
             <action android:id="@+id/action_loginFragment_to_forgotPassFragment"
-                    app:destination="@id/forgotPassFragment" app:popUpTo="@+id/loginFragment"/>
+                    app:destination="@id/forgotPassFragment" app:popUpTo="@id/loginFragment"
+                    tools:layout="@layout/fragment_login"/>
         </fragment>
         <action android:id="@+id/action_registration_navigation_self" app:destination="@id/registration_navigation"/>
         <fragment android:id="@+id/forgotPassFragment"
