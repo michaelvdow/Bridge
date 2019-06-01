@@ -8,15 +8,15 @@ class ForgotPassViewModel: ViewModel() {
 
     val email = MutableLiveData<String>()
 
-    private val databaseProvider = ForgotPassDatabaseProvider()
-
-    init {
-        isSignedIn.value = false
-    }
-
-    fun onResetClick() {
-
-    }
+//    private val databaseProvider = ForgotPassDatabaseProvider()
+//
+//    init {
+//        isSignedIn.value = false
+//    }
+//
+//    fun onResetClick() {
+//
+//    }
 
 
 }
