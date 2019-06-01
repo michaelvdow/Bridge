@@ -49,6 +49,8 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
     kapt 'androidx.databinding:databinding-compiler:3.4.1'
 
+    implementation 'com.firebaseui:firebase-ui-firestore:5.0.0'
+
 }
 
 apply plugin: 'com.google.gms.google-services'
