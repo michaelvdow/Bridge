@@ -75,6 +75,11 @@ class ChatFragment : Fragment() {
 
             override fun onBindViewHolder(p0: ChatViewHolder, p1: Int, p2: Chat) {
                 p0.bind(p2)
+                p0.itemView.setOnClickListener {view ->
+                    val directions = ChatFragmentDirections.actionChatFragmentToMessageFragment()
+                    directions.chatId = p2.id
+                    findNavController().navigate(directions)
+                }
             }
         }
 

@@ -8,6 +8,9 @@
               android:label="ChatFragment">
         <action android:id="@+id/action_chatFragment_to_welcomeFragment" app:destination="@id/registration_navigation"
                 app:popUpTo="@+id/nav_graph" app:popUpToInclusive="true"/>
+        <action android:id="@+id/action_chatFragment_to_messageFragment" app:destination="@id/messageFragment"
+                app:popUpTo="@+id/chatFragment" app:enterAnim="@anim/fui_slide_in_right"
+                app:exitAnim="@anim/fui_slide_out_left"/>
     </fragment>
     <fragment android:id="@+id/matchingFragment"
               android:name="com.apps.michaeldow.projectdao.mainactivity.matching.MatchingFragment"
@@ -59,4 +62,9 @@
     </navigation>
     <action android:id="@+id/action_global_registration_navigation" app:destination="@+id/registration_navigation"/>
     <action android:id="@+id/action_global_registration_navigation2" app:destination="@+id/registration_navigation"/>
+    <fragment android:id="@+id/messageFragment"
+              android:name="com.apps.michaeldow.projectdao.mainactivity.message.MessageFragment"
+              android:label="MessageFragment">
+        <argument android:name="chat_id" app:argType="string" android:defaultValue='""'/>
+    </fragment>
 </navigation>
