@@ -1,6 +1,7 @@
 package com.apps.michaeldow.projectdao.forgot_pass
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,16 +13,18 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
 import com.apps.michaeldow.projectdao.R
-import com.apps.michaeldow.projectdao.databinding.FragmentLoginBinding
+import com.apps.michaeldow.projectdao.databinding.FragmentForgotPassBinding
+
 
 class ForgotPassFragment: Fragment() {
 
     private lateinit var viewModel: ForgotPassViewModel
-    private lateinit var binding: FragmentLoginBinding
+    private lateinit var binding: FragmentForgotPassBinding
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         (activity as AppCompatActivity).supportActionBar?.show()
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_login, container, false)
+
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_forgot_pass, container, false)
         binding.lifecycleOwner = this
 
         viewModel = ViewModelProviders.of(this).get(ForgotPassViewModel::class.java)
@@ -33,27 +36,16 @@ class ForgotPassFragment: Fragment() {
     }
 
     private fun setupObservers() {
-        viewModel.isSignedIn.observe(this, Observer { isSignedIn ->
-            if (isSignedIn) {
-                Toast.makeText(context, "Logged in", Toast.LENGTH_SHORT).show()
-                findNavController().navigate(R.id.action_loginFragment_to_chatFragment2)
+        viewModel.resetSent.observe(this, Observer { resetSent ->
+            if (resetSent) {
+                Log.d("TAG", "bitch")
+                Toast.makeText(context, "Reset email sent", Toast.LENGTH_SHORT).show()
+                findNavController().navigate(R.id.action_forgotPassFragment_to_loginFragment)
             }
         })
 
-        viewModel.forgotPass.observe(this, Observer { forgotPass ->
-            if (forgotPass) {
-                viewModel.forgotPass.value = false
-                findNavController().navigate(R.id.action_loginFragment_to_forgotPassFragment)
-            }
-        })
 
-        viewModel.signInFailed.observe(this, Observer { signInFailed ->
-            Toast.makeText(context, "Log in failed", Toast.LENGTH_SHORT).show()
-        })
 
     }
-
-
-
 
 }

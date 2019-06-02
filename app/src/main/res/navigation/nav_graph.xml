@@ -46,15 +46,7 @@
                   android:name="com.apps.michaeldow.projectdao.forgot_pass.ForgotPassFragment"
                   android:label="ForgotPassFragment"
                   tools:layout="@layout/fragment_forgot_pass">
-            <action android:id="@+id/action_forgotPassFragment_to_resetSentFragment"
-                    app:destination="@id/resetSentFragment" app:popUpTo="@+id/loginFragment"/>
-        </fragment>
-        <fragment android:id="@+id/resetSentFragment"
-                  android:name="com.apps.michaeldow.projectdao.reset_sent.ResetSentFragment"
-                  android:label="ResetSentFragment"
-                  tools:layout="@layout/fragment_reset_sent">
-            <action android:id="@+id/action_resetSentFragment_to_loginFragment" app:destination="@id/loginFragment"
-                    app:popUpTo="@+id/loginFragment"/>
+            <action android:id="@+id/action_forgotPassFragment_to_loginFragment" app:destination="@id/loginFragment"/>
         </fragment>
     </navigation>
     <action android:id="@+id/action_global_registration_navigation" app:destination="@+id/registration_navigation"/>

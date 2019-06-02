@@ -5,7 +5,7 @@
 
     <data>
         <variable name="viewModel"
-                  type="com.apps.michaeldow.projectdao.login.LoginViewModel"/>
+                  type="com.apps.michaeldow.projectdao.forgot_pass.ForgotPassViewModel"/>
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -48,13 +48,14 @@
                 app:layout_constraintHorizontal_bias="0.497" android:textColorHint="@color/colorSuperDarkPurple"
                 android:textColorHighlight="@color/colorSuperLightPurple"
                 android:shadowColor="@color/colorPurpleBlack" android:background="?attr/editTextBackground"
+                android:text="@={viewModel.email}"
                 android:backgroundTint="@color/colorSuperLightPurple"/>
         <Button
                 android:text="Reset Password"
                 android:layout_width="220dp"
                 android:layout_height="50dp"
                 android:id="@+id/button"
-                android:onClick="@{() -> viewModel.onResetClick()}"
+                android:onClick="@{() -> viewModel.onSignInClick()}"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
                 android:layout_marginStart="8dp" app:layout_constraintHorizontal_bias="0.497"

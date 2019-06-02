@@ -90,7 +90,7 @@
                                   </option>
                                   <option name="myPositions">
                                     <map>
-                                      <entry key="action_forgotPassFragment_to_resetSentFragment">
+                                      <entry key="action_forgotPassFragment_to_loginFragment">
                                         <value>
                                           <LayoutPositions />
                                         </value>
@@ -117,27 +117,6 @@
                                         </value>
                                       </entry>
                                       <entry key="action_loginFragment_to_forgotPassFragment">
-                                        <value>
-                                          <LayoutPositions />
-                                        </value>
-                                      </entry>
-                                    </map>
-                                  </option>
-                                </LayoutPositions>
-                              </value>
-                            </entry>
-                            <entry key="resetSentFragment">
-                              <value>
-                                <LayoutPositions>
-                                  <option name="myPosition">
-                                    <Point>
-                                      <option name="x" value="744" />
-                                      <option name="y" value="368" />
-                                    </Point>
-                                  </option>
-                                  <option name="myPositions">
-                                    <map>
-                                      <entry key="action_resetSentFragment_to_loginFragment">
                                         <value>
                                           <LayoutPositions />
                                         </value>
