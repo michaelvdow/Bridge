@@ -14,4 +14,4 @@ class ForgotPassDatabaseProvider {
     fun onResetClick(email: String): Task<Void> {
         return auth.sendPasswordResetEmail(email)
     }
-}
+}   
