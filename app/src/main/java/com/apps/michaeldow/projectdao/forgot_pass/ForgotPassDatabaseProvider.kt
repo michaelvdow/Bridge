@@ -12,8 +12,6 @@ class ForgotPassDatabaseProvider {
     private var auth: FirebaseAuth = FirebaseAuth.getInstance()
 
     fun onResetClick(email: String): Task<Void> {
-        val emailAddress = "user@example.com"
-        return auth.sendPasswordResetEmail(emailAddress)
-
+        return auth.sendPasswordResetEmail(email)
     }
 }
