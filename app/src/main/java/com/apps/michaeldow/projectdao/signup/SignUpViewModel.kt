@@ -12,9 +12,21 @@ class SignUpViewModel: ViewModel() {
     val password = MutableLiveData<String>()
     val isSignedUp = MutableLiveData<Boolean>()
     val signUpFailed = SingleEvent()
+    val viewPass = MutableLiveData<Boolean>()
+
 
     init {
         isSignedUp.value = false
+        viewPass.value = true
+    }
+
+    fun onViewPass() {
+        if(viewPass.value == true){
+            viewPass.value = false
+        }
+        else{
+            viewPass.value = true
+        }
     }
 
     fun onSignUpClick() {

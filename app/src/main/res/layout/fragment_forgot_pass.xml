@@ -49,7 +49,7 @@
                 android:textColorHighlight="@color/colorSuperLightPurple"
                 android:shadowColor="@color/colorPurpleBlack" android:background="?attr/editTextBackground"
                 android:text="@={viewModel.email}"
-                android:backgroundTint="@color/colorSuperLightPurple"/>
+                android:backgroundTint="@color/colorSuperLightPurple" android:textColor="@color/colorPurpleBlack"/>
         <Button
                 android:text="Reset Password"
                 android:layout_width="220dp"

@@ -27,26 +27,36 @@
                   android:label="WelcomeFragment"
                   tools:layout="@layout/fragment_welcome">
             <action android:id="@+id/action_welcomeFragment_to_signUpFragment" app:destination="@id/signUpFragment"
-                    app:popUpToInclusive="false" app:popUpTo="@+id/welcomeFragment"/>
+                    app:popUpToInclusive="false" app:popUpTo="@+id/welcomeFragment"
+                    app:enterAnim="@anim/fui_slide_in_right" app:exitAnim="@anim/fui_slide_in_right"
+                    app:popEnterAnim="@anim/fui_slide_in_right"
+                    app:popExitAnim="@anim/fui_slide_in_right"/>
             <action android:id="@+id/action_welcomeFragment_to_loginFragment" app:destination="@id/loginFragment"
-                    app:popUpTo="@+id/welcomeFragment"/>
+                    app:popUpTo="@+id/welcomeFragment" app:enterAnim="@anim/fui_slide_in_right"
+                    app:exitAnim="@anim/fui_slide_in_right" app:popExitAnim="@anim/fui_slide_in_right"
+                    app:popEnterAnim="@anim/fui_slide_in_right"/>
         </fragment>
         <fragment android:id="@+id/loginFragment"
                   android:name="com.apps.michaeldow.projectdao.login.LoginFragment"
                   android:label="Log In"
+                  tools:layout="@layout/fragment_login"
         >
             <action android:id="@+id/action_loginFragment_to_chatFragment2" app:destination="@id/chatFragment"
                     app:popUpToInclusive="false"/>
             <action android:id="@+id/action_loginFragment_to_forgotPassFragment"
                     app:destination="@id/forgotPassFragment" app:popUpTo="@id/loginFragment"
-                    tools:layout="@layout/fragment_login"/>
+                    app:enterAnim="@anim/fui_slide_in_right" app:exitAnim="@anim/fui_slide_in_right"
+                    app:popEnterAnim="@anim/fui_slide_in_right"
+                    app:popExitAnim="@anim/fui_slide_in_right"/>
         </fragment>
         <action android:id="@+id/action_registration_navigation_self" app:destination="@id/registration_navigation"/>
         <fragment android:id="@+id/forgotPassFragment"
                   android:name="com.apps.michaeldow.projectdao.forgot_pass.ForgotPassFragment"
                   android:label="ForgotPassFragment"
                   tools:layout="@layout/fragment_forgot_pass">
-            <action android:id="@+id/action_forgotPassFragment_to_loginFragment" app:destination="@id/loginFragment"/>
+            <action android:id="@+id/action_forgotPassFragment_to_loginFragment" app:destination="@id/loginFragment"
+                    app:enterAnim="@anim/fui_slide_in_right" app:exitAnim="@anim/fui_slide_in_right"
+                    app:popEnterAnim="@anim/fui_slide_in_right" app:popExitAnim="@anim/fui_slide_in_right"/>
         </fragment>
     </navigation>
     <action android:id="@+id/action_global_registration_navigation" app:destination="@+id/registration_navigation"/>

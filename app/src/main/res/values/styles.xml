@@ -3,7 +3,7 @@
     <!-- Base application theme. -->
     <style name="DaoTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPurple</item>
+        <item name="colorPrimary">@color/colorDarkPurple</item>
         <item name="colorPrimaryDark">@color/colorSuperDarkPurple</item>
         <item name="colorAccent">@color/colorLightPurple</item>
     </style>
