@@ -1,7 +1,6 @@
 package com.apps.michaeldow.projectdao.signup
 
 import android.os.Bundle
-import android.text.InputType
 import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
 import android.view.LayoutInflater

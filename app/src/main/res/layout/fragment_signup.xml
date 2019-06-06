@@ -13,78 +13,89 @@
             android:layout_height="match_parent" android:background="@color/colorPurple">
 
 
+        <ImageView
+                android:contentDescription="Bridge Logo"
+                android:layout_width="230dp"
+                android:layout_height="230dp" app:srcCompat="@drawable/justthebridge"
+                android:id="@+id/logo4" android:adjustViewBounds="false"
+                android:cropToPadding="false" app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="60dp" app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="60dp"
+                android:layout_marginTop="50dp" android:layout_gravity="center"/>
         <Switch
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/switch2"
-                android:onClick="@{() -> viewModel.onViewPass()}"
+                android:onClick="@{() -> viewModel.onViewPassClick()}"
                 android:background="@color/colorPurple"
                 android:hapticFeedbackEnabled="true"
                 android:backgroundTint="#00FDFAFA"
-                app:layout_constraintStart_toEndOf="@+id/passwordInput" android:layout_marginStart="10dp"
-                android:layout_marginBottom="10dp" app:layout_constraintBottom_toBottomOf="@+id/passwordInput"/>
-        <ImageView
-                android:layout_width="292dp"
-                android:layout_height="294dp" app:srcCompat="@mipmap/bridge_high"
-                android:id="@+id/logo2" android:adjustViewBounds="false"
-                android:cropToPadding="false" app:layout_constraintTop_toTopOf="parent"
-                android:layout_marginTop="50dp" app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginStart="60dp" app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginEnd="60dp"
-        />
+                android:layout_marginBottom="80dp"
+                app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
+                app:layout_constraintStart_toEndOf="@+id/linearLayout" android:layout_marginStart="15dp"/>
+
         <TextView
                 android:text="Bridge"
                 android:layout_width="159dp"
                 android:layout_height="53dp"
-                android:id="@+id/bridge2"
+                android:id="@+id/bridge4"
                 android:fontFamily="@font/lato_bold" android:textSize="40sp" android:textColor="@color/colorWhite"
                 android:textAlignment="center" android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 android:layout_marginStart="126dp" app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginEnd="126dp"
-                android:layout_marginTop="264dp"
-                app:layout_constraintTop_toTopOf="@+id/logo2"/>
-        <EditText
-                android:layout_width="220dp"
-                android:layout_height="50dp"
-                android:inputType="textEmailAddress"
-                android:ems="10"
-                android:text="@={viewModel.email}"
-                android:id="@+id/editText"
-                android:layout_marginStart="8dp"
-                app:layout_constraintStart_toStartOf="parent" android:layout_marginEnd="8dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:hint="Email Address" android:textColorHint="@color/colorSuperDarkPurple"
-                android:backgroundTint="@color/colorSuperLightPurple" android:fontFamily="@font/lato"
-                android:textSize="18sp"
-                android:layout_marginTop="60dp" app:layout_constraintTop_toBottomOf="@+id/logo2"
-                app:layout_constraintHorizontal_bias="0.502" android:textColor="@color/colorPurpleBlack"/>
-        <EditText
-                android:layout_width="220dp"
-                android:layout_height="50dp"
-                android:inputType="textPassword"
-                android:ems="10"
-                android:text="@={viewModel.password}"
-                android:id="@+id/passwordInput" app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
-                android:hint="Password"
-                android:textColorHint="@color/colorSuperDarkPurple"
-                android:backgroundTint="@color/colorSuperLightPurple" android:fontFamily="@font/lato"
-                android:textSize="18sp" app:layout_constraintTop_toBottomOf="@+id/editText"
-                android:layout_marginTop="20dp"
-                android:layout_marginStart="8dp" android:textColor="@color/colorPurpleBlack"/>
-        <Button
-                android:text="Sign Up"
-                android:layout_width="220dp"
-                android:layout_height="50dp"
-                android:id="@+id/button"
-                android:onClick="@{() -> viewModel.onSignUpClick()}"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginStart="8dp" android:background="@color/colorPurpleWhite" android:textSize="20sp"
-                android:textAllCaps="false" android:fontFamily="@font/lato_regular"
-                app:layout_constraintHorizontal_bias="0.502" android:layout_marginTop="40dp"
-                app:layout_constraintTop_toBottomOf="@+id/passwordInput"/>
-
+                app:layout_constraintTop_toBottomOf="@+id/logo4" android:layout_gravity="center"/>
+        <LinearLayout
+                android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@+id/bridge4" android:layout_marginTop="20dp"
+                android:id="@+id/linearLayout" app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp">
+            <EditText
+                    android:autofillHints="Email"
+                    android:layout_width="220dp"
+                    android:layout_height="50dp"
+                    android:inputType="textEmailAddress"
+                    android:ems="10"
+                    android:text="@={viewModel.email}"
+                    android:id="@+id/emailInput"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:hint="Email Address" android:textColorHint="@color/colorSuperDarkPurple"
+                    android:backgroundTint="@color/colorSuperLightPurple" android:fontFamily="@font/lato"
+                    android:textSize="18sp"
+                    android:textColor="@color/colorPurpleBlack"
+                    android:layout_gravity="center_horizontal"/>
+            <EditText
+                    android:autofillHints="Password"
+                    android:layout_width="220dp"
+                    android:layout_height="50dp"
+                    android:inputType="textPassword"
+                    android:ems="10"
+                    android:text="@={viewModel.password}"
+                    android:id="@+id/passwordInput"
+                    android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
+                    android:hint="Password"
+                    android:textColorHint="@color/colorSuperDarkPurple"
+                    android:backgroundTint="@color/colorSuperLightPurple" android:fontFamily="@font/lato"
+                    android:textSize="18sp"
+                    android:layout_marginStart="8dp" android:textColor="@color/colorPurpleBlack"
+                    android:layout_marginTop="20dp" app:layout_constraintTop_toBottomOf="@+id/emailInput"
+                    android:layout_gravity="center_horizontal"/>
+            <Button
+                    android:text="Sign Up"
+                    android:layout_width="220dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/button"
+                    android:onClick="@{() -> viewModel.onSignUpClick()}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:background="@color/colorPurpleWhite"
+                    android:textSize="20sp"
+                    android:textAllCaps="false" android:fontFamily="@font/lato_regular"
+                    android:layout_marginTop="20dp"
+                    app:layout_constraintTop_toBottomOf="@+id/passwordInput"
+                    android:layout_gravity="center_horizontal"/>
+        </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

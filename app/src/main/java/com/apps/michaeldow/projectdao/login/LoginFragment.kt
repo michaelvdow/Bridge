@@ -1,6 +1,8 @@
 package com.apps.michaeldow.projectdao.login
 
 import android.os.Bundle
+import android.text.method.HideReturnsTransformationMethod
+import android.text.method.PasswordTransformationMethod
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,6 +15,11 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
 import com.apps.michaeldow.projectdao.R
 import com.apps.michaeldow.projectdao.databinding.FragmentLoginBinding
+import kotlinx.android.synthetic.main.fragment_signup.*
+import android.view.WindowManager
+//import android.R
+
+
 
 class LoginFragment: Fragment() {
 
@@ -26,6 +33,7 @@ class LoginFragment: Fragment() {
 
         viewModel = ViewModelProviders.of(this).get(LoginViewModel::class.java)
         binding.viewModel = viewModel
+
 
         setupObservers()
 
@@ -44,6 +52,15 @@ class LoginFragment: Fragment() {
             if (forgotPass) {
                 viewModel.forgotPass.value = false
                 findNavController().navigate(R.id.action_loginFragment_to_forgotPassFragment)
+            }
+        })
+
+        viewModel.viewPass.observe(this, Observer { viewPass ->
+            if (viewPass) {
+                passwordInput.transformationMethod = PasswordTransformationMethod.getInstance()
+            }
+            else{
+                passwordInput.transformationMethod = HideReturnsTransformationMethod.getInstance()
             }
         })
 

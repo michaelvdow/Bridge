@@ -12,38 +12,10 @@
                                                        android:background="@color/colorPurple"
                                                        android:animateLayoutChanges="true">
 
-
-        <Button
-                android:text="Sign Up"
-                android:layout_width="220dp"
-                android:layout_height="50dp"
-                android:onClick="@{() -> viewModel.onSignUpClick()}"
-                android:id="@+id/signUpButton" app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                android:fontFamily="@font/lato_regular"
-                style="@android:style/Widget.Material.Button" android:textSize="20sp"
-                android:includeFontPadding="false"
-                android:background="@color/colorPurpleWhite" android:textColor="@color/colorSuperDarkPurple"
-                app:layout_constraintHorizontal_bias="0.497"
-                android:padding="5dp" android:textAllCaps="false"
-                android:layout_marginTop="40dp" app:layout_constraintTop_toBottomOf="@+id/logInButton"/>
-        <Button
-                android:text="Log In"
-                android:layout_width="220dp"
-                android:layout_height="50dp"
-                android:onClick="@{() -> viewModel.onLogInClick()}"
-                android:id="@+id/logInButton" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
-                app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
-                style="@android:style/Widget.Material.Button"
-                android:fontFamily="@font/lato_regular"
-                android:background="@color/colorPurpleWhite"
-                android:textSize="20sp" android:textColor="@color/colorSuperDarkPurple"
-                android:padding="5dp" android:textAllCaps="false"
-                android:layout_marginTop="120dp"
-                app:layout_constraintTop_toBottomOf="@+id/logo"/>
         <ImageView
-                android:layout_width="292dp"
-                android:layout_height="294dp" app:srcCompat="@mipmap/bridge_high"
+                android:contentDescription="Bridge Logo"
+                android:layout_width="230dp"
+                android:layout_height="230dp" app:srcCompat="@drawable/justthebridge"
                 android:id="@+id/logo" android:adjustViewBounds="false"
                 android:cropToPadding="false" app:layout_constraintTop_toTopOf="parent"
                 android:layout_marginTop="50dp" app:layout_constraintStart_toStartOf="parent"
@@ -52,15 +24,49 @@
         />
         <TextView
                 android:text="Bridge"
-                android:layout_width="159dp"
-                android:layout_height="53dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:id="@+id/bridge"
                 android:fontFamily="@font/lato_bold" android:textSize="40sp" android:textColor="@color/colorWhite"
                 android:textAlignment="center" android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 android:layout_marginStart="126dp" app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginEnd="126dp"
-                android:layout_marginTop="264dp" app:layout_constraintTop_toTopOf="@+id/logo"/>
+                app:layout_constraintTop_toBottomOf="@+id/logo"/>
+
+        <LinearLayout
+                android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical"
+                android:id="@+id/linearLayout" app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintHorizontal_bias="0.497" app:layout_constraintTop_toBottomOf="@+id/bridge"
+                android:layout_marginTop="20dp">
+            <Button
+                    android:text="Sign Up"
+                    android:layout_width="220dp"
+                    android:layout_height="50dp"
+                    android:onClick="@{() -> viewModel.onSignUpClick()}"
+                    android:id="@+id/signUpButton" app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:fontFamily="@font/lato_regular"
+                    style="@android:style/Widget.Material.Button" android:textSize="20sp"
+                    android:background="@color/colorPurpleWhite" android:textColor="@color/colorSuperDarkPurple"
+                    android:textAllCaps="false"
+                    android:layout_marginBottom="20dp"/>
+            <Button
+                    android:text="Log In"
+                    android:layout_width="220dp"
+                    android:layout_height="50dp"
+                    android:onClick="@{() -> viewModel.onLogInClick()}"
+                    android:id="@+id/logInButton" app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    style="@android:style/Widget.Material.Button"
+                    android:fontFamily="@font/lato_regular"
+                    android:background="@color/colorPurpleWhite"
+                    android:textSize="20sp" android:textColor="@color/colorSuperDarkPurple"
+                    android:textAllCaps="false"
+            />
+        </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

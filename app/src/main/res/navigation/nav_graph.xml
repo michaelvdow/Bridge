@@ -56,7 +56,8 @@
                   tools:layout="@layout/fragment_forgot_pass">
             <action android:id="@+id/action_forgotPassFragment_to_loginFragment" app:destination="@id/loginFragment"
                     app:enterAnim="@anim/fui_slide_in_right" app:exitAnim="@anim/fui_slide_in_right"
-                    app:popEnterAnim="@anim/fui_slide_in_right" app:popExitAnim="@anim/fui_slide_in_right"/>
+                    app:popEnterAnim="@anim/fui_slide_in_right" app:popExitAnim="@anim/fui_slide_in_right"
+                    app:popUpTo="@+id/welcomeFragment"/>
         </fragment>
     </navigation>
     <action android:id="@+id/action_global_registration_navigation" app:destination="@+id/registration_navigation"/>

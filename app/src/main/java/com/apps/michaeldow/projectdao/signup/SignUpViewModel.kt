@@ -20,7 +20,7 @@ class SignUpViewModel: ViewModel() {
         viewPass.value = true
     }
 
-    fun onViewPass() {
+    fun onViewPassClick() {
         if(viewPass.value == true){
             viewPass.value = false
         }

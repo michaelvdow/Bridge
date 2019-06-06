@@ -3,6 +3,7 @@ package com.apps.michaeldow.projectdao.mainactivity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.WindowManager
 import androidx.appcompat.widget.Toolbar
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
@@ -20,6 +21,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
+
+        window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN or WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN)
 
         NavigationUI.setupActionBarWithNavController(this, NavHostFragment.findNavController(nav_host_fragment))
         setupWithNavController(toolbar, findNavController(R.id.nav_host_fragment))
