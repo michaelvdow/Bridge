@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.apps.michaeldow.projectdao.R
@@ -34,6 +35,9 @@ class MessageFragment : Fragment() {
 
         viewModel = ViewModelProviders.of(this).get(MessageViewModel::class.java)
         binding.viewModel = viewModel
+        val args: MessageFragmentArgs by navArgs()
+        viewModel.otherUser = args.chatId
+
 
         setupRecyclerView()
         setupObservers()
@@ -53,21 +57,25 @@ class MessageFragment : Fragment() {
 
     private fun setupRecyclerView() {
         val recyclerView = binding.root.findViewById(R.id.message_recycler_view) as RecyclerView
-        recyclerView.layoutManager = LinearLayoutManager(context)
+        val linearLayout = LinearLayoutManager(context)
+        linearLayout.stackFromEnd = true
+        recyclerView.layoutManager = linearLayout
 
         val options: FirestoreRecyclerOptions<Message> = FirestoreRecyclerOptions.Builder<Message>()
-            .setQuery(viewModel.getQuery(), Message::class.java)
+            .setQuery(viewModel.getQuery(viewModel.otherUser), Message::class.java)
             .build()
 
+        // TODO: Get user id from database
+        val userId = 1
+
         adapter = object: FirestoreRecyclerAdapter<Message, RecyclerView.ViewHolder>(options) {
-            val text = "incoming"
-            val image = "outgoing"
-            val textIndex = 0
-            val imageIndex = 1
+            val text = "text"
+            val incomingText = 0
+            val outgoingText = 1
 
             override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
                 val inflater = LayoutInflater.from(parent.context)
-                if (viewType == textIndex) {
+                if (viewType == incomingText) {
                     return MessageIncomingTextViewHolder(inflater.inflate(R.layout.list_item_message_incoming_text, parent, false))
                 } else {
                     return MessageOutgoingTextViewHolder(inflater.inflate(R.layout.list_item_message_outgoing_text, parent, false))
@@ -75,10 +83,12 @@ class MessageFragment : Fragment() {
             }
 
             override fun getItemViewType(position: Int): Int {
-                if (getItem(position).type == text) {
-                    return textIndex
+                println(getItem(position).type)
+                println(getItem(position).message)
+                if (getItem(position).type == text && getItem(position).from == userId) {
+                    return outgoingText
                 } else {
-                    return imageIndex
+                    return incomingText
                 }
             }
 

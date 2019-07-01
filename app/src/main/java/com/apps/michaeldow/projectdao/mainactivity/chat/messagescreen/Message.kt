@@ -1,7 +1,12 @@
 package com.apps.michaeldow.projectdao.mainactivity.chat.messagescreen
 
+import com.google.firebase.Timestamp
+
 class Message {
-    lateinit var message: String
-    lateinit var id: String
-    lateinit var type: String
+    var from: Int = 0
+    var message: String = ""
+    var type: String = "text"
+    var timestamp: Timestamp? = null
+
+    constructor() {}
 }

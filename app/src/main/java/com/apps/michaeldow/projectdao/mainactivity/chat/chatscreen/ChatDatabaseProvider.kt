@@ -10,6 +10,7 @@ class ChatDatabaseProvider {
     private val auth = FirebaseAuth.getInstance()
 
     fun getChatQuery(): Query { // TODO: switch document to auth.getUID, create constants
+
         return db.collection("profiles").document("1").collection("chats").orderBy("timestamp")
     }
 
