@@ -1,13 +1,10 @@
-package com.apps.michaeldow.projectdao.mainactivity.chat
+package com.apps.michaeldow.projectdao.mainactivity.chat.messagescreen
 
-import android.util.Log
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.firestore.DocumentSnapshot
-import com.google.firebase.firestore.EventListener
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
 
-class ChatDatabaseProvider {
+class MessageDatabaseProvider {
 
     private val db = FirebaseFirestore.getInstance()
     private val auth = FirebaseAuth.getInstance()

@@ -1,4 +1,4 @@
-package com.apps.michaeldow.projectdao.mainactivity.chat
+package com.apps.michaeldow.projectdao.mainactivity.chat.chatscreen
 
 class Chat {
     lateinit var name: String

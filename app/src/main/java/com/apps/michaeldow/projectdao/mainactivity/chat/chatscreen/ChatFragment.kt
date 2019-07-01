@@ -1,4 +1,4 @@
-package com.apps.michaeldow.projectdao.mainactivity.chat
+package com.apps.michaeldow.projectdao.mainactivity.chat.chatscreen
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -16,7 +16,6 @@ import com.apps.michaeldow.projectdao.databinding.FragmentChatBinding
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter
 import com.firebase.ui.firestore.FirestoreRecyclerOptions
 import com.google.firebase.auth.FirebaseAuth
-import kotlinx.android.synthetic.main.fragment_chat.*
 
 class ChatFragment : Fragment() {
 

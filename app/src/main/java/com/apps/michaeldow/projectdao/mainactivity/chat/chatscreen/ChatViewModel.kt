@@ -1,4 +1,4 @@
-package com.apps.michaeldow.projectdao.mainactivity.chat
+package com.apps.michaeldow.projectdao.mainactivity.chat.chatscreen
 
 import androidx.lifecycle.ViewModel
 import com.google.firebase.firestore.Query

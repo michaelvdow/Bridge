@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools" android:id="@+id/fragment_chat_layout">
+        xmlns:tools="http://schemas.android.com/tools" android:id="@+id/fragment_message_layout">
 
     <data>
         <variable name="viewModel"
-                  type="com.apps.michaeldow.projectdao.mainactivity.chat.chatscreen.ChatViewModel"/>
+                  type="com.apps.michaeldow.projectdao.mainactivity.chat.messagescreen.MessageViewModel"/>
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -15,7 +15,7 @@
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/chat_recycler_view">
+            android:id="@+id/message_recycler_view">
 
         </androidx.recyclerview.widget.RecyclerView>
 

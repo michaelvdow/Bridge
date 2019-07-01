@@ -29,6 +29,11 @@
                         </option>
                         <option name="myPositions">
                           <map>
+                            <entry key="action_chatFragment_to_messageFragment">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
                             <entry key="action_chatFragment_to_welcomeFragment">
                               <value>
                                 <LayoutPositions />
